@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap');
+
 :root {
   --primary: #d81e5b;
   --secondary: #8c38ff;
@@ -16,11 +18,12 @@ body {
 }
 
 .App {
-  /* display: flex; */
+  display: flex;
   min-height:100vh;
   align-items: center;
   justify-content: center;
   padding: 16px;
+  transition: 0.4s;
 }
 
 .calculator {
@@ -30,6 +33,7 @@ body {
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0px 2px 64px rgba(0, 0, 0, 0.2);
+  transition: 0.4s;
 
 }
 
@@ -42,11 +46,13 @@ body {
   font-weight: 300;
   border-radius: 16px;
   margin-bottom: 20px;
+  transition: 0.4s;
 }
 
 .display span {
     font-size: 14px;
     color: #888;
+    transition: 0.4s;
 }
 
 button {
@@ -73,6 +79,7 @@ button:hover {
   background-color: var(--primary);
   font-weight: 700;
   border: 0.4px solid rgba(0, 0, 0, 0.089);
+  transition: 0.4s;
 }
 
 .digits {
@@ -85,23 +92,157 @@ button:hover {
   max-width: 33.333%;
   background-color: var(--dark);
   border: 0.4px solid rgba(0, 0, 0, 0.233);
+  transition: 0.4s;
 
 } 
 
 .digits .calculate-btn{
-  background-color: var(--primary)
+  background-color: var(--primary);
+  transition: 0.4s;
 }
 
-
-.theme-options div{
-  border: 1px solid white;
-  padding: 10px;
+.in{
+  color: rgb(12, 17, 43);
+  transition: 0.4s;
+}
+.out {
+  color: rgb(136, 255, 0);
+  transition: 0.4s;
 }
 
-.theme-black{
+/* TITLE SECTION */
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.title h1{
+  color:aliceblue;
+  font-weight: 600;
+  font-size: large;
+}
+
+.theme-options {
+  display: flex;
+  gap: 10px;
+  background: #000;
+  border-radius: 20px;
+  padding: 3px;
+}
+
+.theme-options div {
+  height: 20px;
+  width: 20px;
+  border-radius: 999999px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.theme-options div:hover {
+  transform: scale(0.7);
+  transition: 0.4s;
+}
+
+.theme-options div:nth-child(1){
+  background: var(--light);
+}
+.theme-options div:nth-child(2){
   background: aliceblue;
 }
+.theme-options div:nth-child(3){
+  background: #3e0d77;
+}
+
+/* theme-light */
+
+.theme-light{
+  background: rgb(211, 218, 224);
+  transition: 0.4s;
+}
+
+.theme-light .display {
+  background-color: rgb(255, 255, 255);
+  color: rgb(20, 20, 26);
+  transition: 0.4s;
+}
+
+
+.theme-light button {
+  color:rgb(20, 17, 17);
+  transition: 0.4s;
+}
+
+.theme-light .operators button {
+  background-color: rgb(21, 198, 221);
+  border: 0.4px solid rgba(24, 96, 253, 0.089);
+  transition: 0.4s;
+}
+
+.theme-light .digits .calculate-btn {
+  background-color: rgb(21, 198, 221);
+  transition: 0.4s;
+}
+
+.theme-light .digits button {
+  background-color: aliceblue;
+  transition: 0.4s;
+} 
+
+.theme-light .out {
+  color:rgb(0, 123, 139);
+  transition: 0.4s;
+}
+
+
+/* leet-light */
 
 .theme-leet{
   background:#1D0934;
+  transition: 0.4s;
 }
+
+.theme-leet .display {
+  background-color:rgb(58, 12, 102);
+  color: rgb(235, 235, 255);
+  transition: 0.4s;
+}
+
+.theme-leet button {
+  color:rgb(255, 208, 0);
+  transition: 0.4s;
+}
+
+.theme-leet .operators button {
+  background-color: rgb(154, 7, 173);
+  border: 0.4px solid rgba(24, 96, 253, 0.089);
+  transition: 0.4s;
+}
+
+.theme-leet .digits .calculate-btn {
+  background-color:rgb(154, 7, 173);
+  transition: 0.4s;
+}
+
+.theme-leet .digits button {
+  background-color: rgb(58, 12, 102);
+  transition: 0.4s;
+
+} 
+
+.theme-leet .in{
+  color: rgb(94, 17, 219);
+  transition: 0.4s;
+}
+
+
+.signature{
+  font-family: 'MonteCarlo', cursive;
+}
+
+
+
+
+
+

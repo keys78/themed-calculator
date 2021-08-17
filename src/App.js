@@ -48,7 +48,7 @@ function App() {
   }
 
   const deleteLast = () => {
-    if (calc == '') {
+    if (calc === '') {
       return;
     }
     const value = calc.slice(0, -1)
@@ -62,7 +62,7 @@ function App() {
 
   useEffect(() => {
     const currentThemeColor = localStorage.getItem('theme-color');
-    if(currentThemeColor) {
+    if (currentThemeColor) {
       setColorTheme(currentThemeColor)
     }
   }, []);
@@ -75,45 +75,48 @@ function App() {
 
   return (
     <div className={`App ${colorTheme}`}>
+      <div className="holder">
 
-      <div classNam="title">
-      <h1>calc</h1>
-      
-      <div className="theme-options">
-        <div className={`${colorTheme === 'theme-white' ? 'active' : ''} `} id="theme-white" onClick={() => handleClick('theme-white')}>1</div>
-        <div className={`${colorTheme === 'theme-black' ? 'active' : ''} `} id="theme-black" onClick={() => handleClick('theme-black')}>2</div>
-        <div className={`${colorTheme === 'theme-leet' ? 'active' : ''} `} id="theme-black" onClick={() => handleClick('theme-leet')}>3</div>
-      </div>
+        <div className="title">
+          <h1>calc</h1>
 
-      </div>
+          <div className="flex gap-3 items-center">
+            <h1>themes</h1>
 
+            <div className="theme-options">
+              <div className={`${colorTheme === 'theme-default' ? 'active' : ''} `} onClick={() => handleClick('theme-default')} />
+              <div className={`${colorTheme === 'theme-light' ? 'active' : ''} `} onClick={() => handleClick('theme-light')} />
+              <div className={`${colorTheme === 'theme-leet' ? 'active' : ''} `} onClick={() => handleClick('theme-leet')} />
+            </div>
+          </div>
 
-
-
-
-      <div className="calculator">
-        <div className="display">
-          {result ? <span> ({result}) </span> : ''}&nbsp;
-          {calc || "0"}
         </div>
 
-        <div className="operators">
-          <button onClick={() => updateCalc('/')}>/</button>
-          <button onClick={() => updateCalc('*')}>x</button>
-          <button onClick={() => updateCalc('+')}>+</button>
-          <button onClick={() => updateCalc('-')}>-</button>
+        <div className="calculator">
+          <div className="display">
+            {result ? <span> ({result}) </span> : ''}&nbsp;
+            {calc || "0"}
+          </div>
 
-          <button onClick={deleteLast}>DEL</button>
-          <button onClick={reset}>RESET</button>
+          <div className="operators">
+            <button onClick={() => updateCalc('/')}>/</button>
+            <button onClick={() => updateCalc('*')}>x</button>
+            <button onClick={() => updateCalc('+')}>+</button>
+            <button onClick={() => updateCalc('-')}>-</button>
+
+            <button onClick={deleteLast}>DEL</button>
+            <button onClick={reset}>RESET</button>
+          </div>
+
+          <div className="digits">
+            {createDigits()}
+            <button onClick={() => updateCalc('0')}>0</button>
+            <button onClick={() => updateCalc('.')}>.</button>
+            <button className="calculate-btn" onClick={calculate}>=</button>
+          </div>
+          
         </div>
-
-        <div className="digits">
-          {createDigits()}
-          <button onClick={() => updateCalc('0')}>0</button>
-          <button onClick={() => updateCalc('.')}>.</button>
-          <button className="calculate-btn" onClick={calculate}>=</button>
-        </div>
-
+        <h6 className="signature in text-lg mt-4 font-semibold text-right">| Coded by <a className="out" href="https://github.com/Em-codes/themed-calculator">Em_codes</a></h6>
       </div>
 
     </div>
