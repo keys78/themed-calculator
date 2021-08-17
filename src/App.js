@@ -75,7 +75,7 @@ function App() {
 
   return (
     <div className={`App ${colorTheme}`}>
-      <div className="holder">
+      <div className="holder sm:-mt-0 -mt-32">
 
         <div className="title">
           <h1>calc</h1>
