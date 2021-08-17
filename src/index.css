@@ -1,8 +1,8 @@
 :root {
   --primary: #d81e5b;
   --secondary: #8c38ff;
-  --dark: #131a26;
-  --light: #eee;
+  --dark: #182034;
+  --light: #3A4764;
 }
 
 *{
@@ -16,7 +16,7 @@ body {
 }
 
 .App {
-  display: flex;
+  /* display: flex; */
   min-height:100vh;
   align-items: center;
   justify-content: center;
@@ -25,8 +25,8 @@ body {
 
 .calculator {
   width: 100%;
-  max-width: 400px;
-  background-color: #fff;
+  max-width: 500px;
+  background-color: transparent;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0px 2px 64px rgba(0, 0, 0, 0.2);
@@ -34,12 +34,14 @@ body {
 }
 
 .display {
-  padding: 16px;
+  padding: 24px 16px;
   text-align: right;
   background-color: var(--dark);
-  color: var(--light);
+  color: #fff;
   font-size: 24px;
   font-weight: 300;
+  border-radius: 16px;
+  margin-bottom: 20px;
 }
 
 .display span {
@@ -70,6 +72,7 @@ button:hover {
   flex: 1 1 0%;
   background-color: var(--primary);
   font-weight: 700;
+  border: 0.4px solid rgba(0, 0, 0, 0.089);
 }
 
 .digits {
@@ -81,4 +84,24 @@ button:hover {
   flex: 1 1 33.333%;
   max-width: 33.333%;
   background-color: var(--dark);
+  border: 0.4px solid rgba(0, 0, 0, 0.233);
+
 } 
+
+.digits .calculate-btn{
+  background-color: var(--primary)
+}
+
+
+.theme-options div{
+  border: 1px solid white;
+  padding: 10px;
+}
+
+.theme-black{
+  background: aliceblue;
+}
+
+.theme-leet{
+  background:#1D0934;
+}
